@@ -21,7 +21,7 @@ public class CoordinateTest {
     @Test
     public void shouldReturnTheCoordinateWord() {
         Coordinate coordinate = new Coordinate("B","7");
-        assertEquals("B7",coordinate.getword());
+        assertEquals("B7",coordinate.getWord());
     }
 
 }

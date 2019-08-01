@@ -18,7 +18,7 @@ public class Coordinate {
     }
 
 
-    public String getword() {
+    public String getWord() {
         return x + y;
     }
 }
