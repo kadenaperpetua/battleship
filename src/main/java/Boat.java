@@ -1,10 +1,13 @@
 public class Boat {
 
-    public Boat(String x, int y) {
+    public Coordinate coordenada;
+    public Boat(String x, String y) {
+        coordenada= new Coordinate(x,y);
+
 
     }
 
     public Coordinate getCoordinate() {
-        return null;
+        return coordenada;
     }
 }
