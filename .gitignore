@@ -1,2 +1,7 @@
 .idea/
 .gradle/
+build/classes
+build/libs
+build/reports
+build/tmp
+build/test-results
