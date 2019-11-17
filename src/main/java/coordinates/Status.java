@@ -1,5 +1,8 @@
 package coordinates;
 
 public enum Status {
-    BLANK, MISS, HIT, SUNK
+    IDLE(),
+    MISS(),
+    HIT(),
+    SUNK(),
 }

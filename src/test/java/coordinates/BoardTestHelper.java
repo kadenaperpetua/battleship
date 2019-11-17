@@ -1,7 +1,8 @@
-public class Hello {
+package coordinates;
 
+class BoardTestHelper {
 
-    public String getFirstLine() {
+    private String getFirstLine() {
         return "   "
                 + "\u035FA\u035F "
                 + "\u035FB\u035F "
@@ -15,21 +16,7 @@ public class Hello {
                 + "\u035FJ\u035F \n";
     }
 
-    public String getSecondLine() {
-        return "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "|\u035F \u035F"
-                + "| \n";
-    }
-
-    public String getEmptyLine(String index) {
+    private String getEmptyLine(String index) {
         return index
                 + "|\u035F \u035F"
                 + "|\u035F \u035F"
@@ -44,7 +31,7 @@ public class Hello {
                 + "| \n";
     }
 
-    public String getTestHitLine(String index) {
+    private String getHitLine(String index) {
         return index
                 + "|\u035F \u035F"
                 + "|\u035F \u035F"
@@ -59,7 +46,7 @@ public class Hello {
                 + "| \n";
     }
 
-    public String getTestMissLine(String index) {
+    private String getMissLine(String index) {
         return index
                 + "|\u035F \u035F"
                 + "|\u035F \u035F"
@@ -75,7 +62,7 @@ public class Hello {
     }
 
 
-    public String getTestSunk(String index) {
+    private String getSunkLine(String index) {
         return index
                 + "|\u035F \u035F"
                 + "|\u035F \u035F"
@@ -90,17 +77,31 @@ public class Hello {
                 + "| \n";
     }
 
-    public String getMessage() {
+    String getBoard() {
         return getFirstLine()
                 + getEmptyLine(" 1")
                 + getEmptyLine(" 2")
-                + getTestHitLine(" 3")
-                + getTestHitLine(" 4")
-                + getTestHitLine(" 5")
-                + getTestSunk(" 6")
-                + getTestSunk(" 7")
-                + getTestMissLine(" 8")
-                + getTestMissLine(" 9")
-                + getTestMissLine("10");
+                + getHitLine(" 3")
+                + getHitLine(" 4")
+                + getHitLine(" 5")
+                + getSunkLine(" 6")
+                + getSunkLine(" 7")
+                + getMissLine(" 8")
+                + getMissLine(" 9")
+                + getMissLine("10");
+    }
+
+    String getEmptyBoard() {
+        return getFirstLine()
+                + getEmptyLine(" 1")
+                + getEmptyLine(" 2")
+                + getEmptyLine(" 3")
+                + getEmptyLine(" 4")
+                + getEmptyLine(" 5")
+                + getEmptyLine(" 6")
+                + getEmptyLine(" 7")
+                + getEmptyLine(" 8")
+                + getEmptyLine(" 9")
+                + getEmptyLine("10");
     }
 }

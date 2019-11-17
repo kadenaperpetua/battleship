@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CoordinateTest {
+public class CellTest {
 
     @Test
     public void coordinateShouldHaveStatus() {
@@ -50,4 +50,5 @@ public class CoordinateTest {
         Cell coordinate = new Cell(Letter.J,10);
         assertEquals(100,coordinate.getInt());
     }
+
 }

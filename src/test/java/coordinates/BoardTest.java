@@ -2,9 +2,8 @@ package coordinates;
 
 import org.junit.Test;
 
-import java.util.List;
-
-import static org.junit.Assert.*;
+import static coordinates.Status.*;
+import static org.junit.Assert.assertEquals;
 
 public class BoardTest {
 
@@ -12,22 +11,28 @@ public class BoardTest {
     public void shouldContainListOf100Cells() {
         Board board = new Board();
         int count = board.getCells().size();
-        assertEquals(100,count);
+        assertEquals(100, count);
     }
 
     @Test
-    public void shouldContainACellA10() {
+    public void shouldDrawEmptyBoard() {
         Board board = new Board();
-        List listOfCells = board.getCells();
-        Cell lastCell = (Cell) listOfCells.get(9);
-        assertEquals("A10", lastCell.getWord());
+        BoardTestHelper helper = new BoardTestHelper();
+        assertEquals(helper.getEmptyBoard(), board.drawBoard());
     }
 
     @Test
-    public void shouldContainACellJ10() {
+    public void shouldDrawCustomBoard() {
         Board board = new Board();
-        List listOfCells = board.getCells();
-        Cell lastCell = (Cell) listOfCells.get(99);
-        assertEquals("J10", lastCell.getWord());
+        board.setCellStatus(25, HIT);
+        board.setCellStatus(35, HIT);
+        board.setCellStatus(45, HIT);
+        board.setCellStatus(58, SUNK);
+        board.setCellStatus(68, SUNK);
+        board.setCellStatus(76, MISS);
+        board.setCellStatus(86, MISS);
+        board.setCellStatus(96, MISS);
+        BoardTestHelper helper = new BoardTestHelper();
+        assertEquals(helper.getBoard(), board.drawBoard());
     }
 }
